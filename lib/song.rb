@@ -5,8 +5,9 @@ class Song
   attr_reader :artist
   
   extend Memorable::ClassMethods
-  extend Findable::ClassMethods
-  include Paramable::InstanceMethods
+  include Memorable::InstanceMethods
+  extend Findable
+  include Paramable
   
   def initialize
     self.class.all << self
